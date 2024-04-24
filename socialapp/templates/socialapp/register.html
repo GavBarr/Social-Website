@@ -1,0 +1,79 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+
+<div class="container">
+   <!-- <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <div class="card-title">
+                        Login
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                            <div class="form-group">
+                                {{ form.username }}
+                                <br>
+                                {{ form.email }}
+                                <br>
+                                {{ form.password1 }}
+                                <br>
+                                {{ form.password2 }}
+                            </div>
+
+                        <button type="submit" class="btn-info">Signup</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- <form method="POST">
+        {% csrf_token %}
+       <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        {{ form.username }}
+        <div id="usernHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        {{ form.email }}
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        {{ form.password1 }}
+      </div>
+
+
+    <button type="submit" class="btn btn-primary">Signup</button>
+</form>-->
+
+
+    <div class="container">
+        <div class="login-inner-container">
+            <form method="POST" class="form-container-register">
+                <div class="register-header">
+                    <h1>Register</h1>
+                </div>
+                {% csrf_token %}
+                {{ form }}
+                <div id="register-button-div">
+                    <button id="register-button" type="submit" class="btn btn-light">Register</button>
+                </div>
+
+           <div class="login-register-link">
+            <a>Already have an account? </a><a class="link-hover" href="{% url 'login' %}" class="nav-link">Login here!</a>
+
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

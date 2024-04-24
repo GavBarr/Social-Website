@@ -1,0 +1,74 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+
+
+   <!-- <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <div class="card-title">
+                        Login
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                            <div class="form-group">
+                                {{ form.username }}
+                                <br>
+                                {{ form.email }}
+                                <br>
+                                {{ form.password1 }}
+                                <br>
+                                {{ form.password2 }}
+                            </div>
+
+                        <button type="submit" class="btn-info">Signup</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>-->
+<div class="container">
+    <div class="login-inner-container">
+
+       <form method="POST" class="form-container">
+           <div class="login-header">
+               <h1>Login</h1>
+           </div>
+
+            {% csrf_token %}
+           <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            {{ form.username }}
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Password</label>
+            {{ form.password }}
+
+          </div>
+        <button type="submit" class="btn btn-light">Login</button>
+
+           <div class="login-register-link">
+            <a>Don't have an account? </a><a class="link-hover" href="{% url 'register' %}" class="nav-link">Register here!</a>
+
+            </div>
+           </div>
+
+
+           </form>
+
+    </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+
+{% endblock %}

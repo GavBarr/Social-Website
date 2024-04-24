@@ -1,0 +1,723 @@
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+
+.profile-main-container{
+    position: relative;
+    top: 56px;
+    height:100%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+.profile-main-container-blur{
+    position: relative;
+    top: 56px;
+    height:100%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    filter: blur(10px)
+
+}
+
+.profile-header-container{
+    background-color: #eaebee;
+    position: relative;
+    width: 100%;
+    height: 25em;
+    display: block;
+}
+.profile-body-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #eaebee;
+    display: block;
+    border-top: solid #898a8f 1px;
+
+}
+
+.profile-column-container{
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: auto;
+    background-color: #eaebee;
+    border-top: solid #898a8f 1px;
+
+
+}
+.container
+{
+    position: relative;
+    width: 100%;
+    top: 56px;
+}
+.profile-small-container
+{
+    display: flex;
+    position: relative;
+    top: 5em;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+}
+.profile-small-container
+{
+    display: flex;
+
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+}
+.profile-pic-box
+{
+    background-color: #eaebee;
+    position: absolute;
+    width: 100%;
+    height: 61%;
+    display: block;
+    bottom: -5em;
+    border-top: solid #898a8f 1px;
+
+
+}
+.login-inner-container
+{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: 5em;
+
+}
+
+.register-inner-container
+{
+    position: relative;
+    text-align: center;
+
+    width: 30em;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 100em;
+    padding-bottom: 7em;
+
+}
+.form-container
+{
+     color: #cedede;
+    background-color: #6f819f;
+    border-radius: 5px;
+    display: inline-block;
+     padding-left: 10em;
+    padding-right: 10em;
+    padding-top: 10em;
+    padding-bottom: 7em;
+}
+
+.login-header
+{
+    position:relative;
+    top: -7em;
+}
+.login-header-text
+{
+    font-weight: bold;
+}
+.register-header
+{
+    position:relative;
+    top: -7em;
+}
+
+.form-container-register
+{
+     color: #cedede;
+    background-color: #6f819f;
+    border-radius: 5px;
+    display: inline-block;
+     padding-left: 10em;
+    padding-right: 10em;
+    padding-top: 10em;
+    padding-bottom: 7em;
+}
+.logout-inner-container
+{
+    position: absolute;
+    top: 10em;
+}
+.banner_image
+{
+    width: 100%;
+    height: 62%;
+}
+#login-button
+{
+    width: 10em;
+    position: relative;
+    left: .2em;
+}
+.mb-3
+{
+    right: 2em;
+    position: relative;
+}
+.mb-4
+{
+    right: 1.8em;
+    position: relative;
+}
+.login-register-link
+{
+    padding-top: 25px
+}
+.link-hover:hover
+{
+    color: ghostwhite;
+}
+.link-hover
+{
+    color: #cedede;
+    text-decoration: none;
+    font-weight: bold;
+}
+.big-container
+{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.feed-page-container
+{
+    top: 59px;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    background-color: #eaebee;
+    display: inline-block;
+    width: 50em;
+
+
+}
+
+.feed-header
+{
+    padding: 25px;
+    background-color: white;
+}
+
+.explore-page-container
+{
+    top: 59px;
+    position: relative;
+    text-align: center;
+
+    background-color: #eaebee;
+    display: inline-block;
+    width: 50em;
+
+}
+
+.explore-header
+{
+    padding: 25px;
+    background-color: white;
+}
+
+
+.profile-notes-section
+{
+    border-bottom: solid #898a8f 1px;
+    position: relative;
+
+    height: 40%;
+}
+
+#notes-display-text
+{
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.profile-notes-content-parent-container{
+    position: relative;
+    height: 60%;
+
+    padding-left: 3.5em;
+}
+.profile-notes-content-child-container{
+
+    border: solid #898a8f 1px;
+    border-radius: 10px;
+    width: 92%;
+    height: 100%;
+    background-color: whitesmoke;
+
+}
+
+.profile-notes-content-header{
+    width: 100%;
+    height: 3em;
+    border-bottom: solid #898a8f 1px;
+    background-color: #eaf17c;
+        border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.profile-notes-content-detail{
+    position:relative;
+    width: 98%;
+    top: .8em;
+    height: 14.2em;
+
+
+
+}
+
+.notes-header{
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 2em;
+
+}
+.notes-detail{
+    padding-left: .5em;
+    text-indent: 1em;
+}
+
+.profile-image-container
+{
+    width: 10em;
+    height: 11em;
+    position: relative;
+    top: -13em;
+    left: 1em;
+    background-color: #eaebee;
+}
+.profile-image
+{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: solid #eaebee;
+}
+
+.profle-name-header
+{
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.profle-name-header h1
+{
+    font-weight: bold;
+
+}
+.profile-description-location{
+    height: 10em;
+}
+.profile-description-text
+{
+    display: inline-block;
+    align-items: start;
+    justify-content: space-between;
+    width: 30em;
+    padding-left: 10px;
+    padding-top: 0px;
+
+    height: 6em;
+
+
+}
+.profile-description-location
+{
+    display: inline-block;
+    text-align: right;
+    float: right;
+    width: 10em;
+    padding-right: 50px;
+
+
+
+}
+.profile-description{
+    position: relative;
+    top: 1em;
+}
+.note-deletion-container {
+    position:relative;
+    text-align: center;
+    padding: 2em;
+}
+
+#register-button-div
+{
+    padding-top: 10px;
+}
+
+.profile-settings-main-container
+{
+    position: relative;
+    top: 5em;
+
+    width: 100%;
+    height: 100%;
+
+}
+.profile-settings-child-container
+{
+    position: relative;
+    width: 100%;
+
+
+}
+
+.profile-settings-child-container
+{
+    position: relative;
+    max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+
+
+
+}
+.banner-image-upload
+{
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+}
+
+.profile-image-upload
+{
+
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-top: 3em;
+}
+
+.profile-description-upload
+{
+
+    padding-top: 5em;
+    padding-bottom: 5em;
+    position: relative;
+
+    text-align: center;
+}
+
+.label-for-profile-images
+{
+    top: .3em;
+    position: relative;
+    padding-right: 1em;
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+.profile-settings-container
+{
+    background-color: #eaebee;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.profile-settings-header
+{
+    padding-bottom: 1em;
+}
+
+.add-note-field
+{
+    width: 100%;
+    position: relative;
+    text-align:center;
+    padding: 2em;
+}
+.add-note-container
+{
+    position: relative;
+    text-align: center;
+}
+.add-note-form
+{
+    position: relative;
+    text-align: center;
+}
+.add-note-button
+{
+    padding: 2em;
+}
+.note-text
+{
+    font-size: 20px;
+}
+.profile-back-container
+{
+    background-color: black;
+}
+
+.create-profile-post-button
+{
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 1000;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  text-align: center;
+  text-decoration: none;
+
+
+
+
+}
+
+#add-post-button
+{
+    text-align: center;
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    margin: auto;
+    line-height: 4em;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.add-post-container
+{
+   position: fixed;
+    width: 50%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    margin-top: -17%; /* Negative half of height. */
+    margin-left: -25%; /* Negative half of width. */
+    background-color: #d6d6d6;
+    border-radius: 10px;
+
+}
+
+.add-post-small-container
+{
+    position:relative;
+    text-align: center;
+
+
+}
+
+.exit-add-post-button
+{
+    position:relative;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.profile-post-section
+{
+
+    position: relative;
+
+    height: 30%;
+}
+
+.input-group
+{
+    width: 100%;
+    position:relative;
+    text-align: center;
+}
+.add-post-form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+.add-post-button
+{
+    padding: 5px;
+}
+
+
+.add-post-field
+{
+    width: 100%;
+    position: relative;
+    text-align:center;
+    padding: 2em;
+}
+.add-post-container
+{
+    position: relative;
+    text-align: center;
+}
+
+.profile-post-content-child-container
+{
+    border: solid #898a8f 1px;
+    border-radius: 10px;
+    width: 92%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.post-header{
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: .5em;
+
+}
+
+.profile-post-content-header{
+    width: 100%;
+    height: 4em;
+    border-bottom: solid #898a8f 1px;
+    background-color: #7cc0f1;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.profile-post-content-detail{
+    position:relative;
+    width: 98%;
+    top: .8em;
+    height: 14.2em;
+
+
+
+}
+
+.post-profile-image
+{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    padding: .5em;
+}
+.post-profile-image-image
+{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+.post-header-container
+{
+    position: relative;
+    left: 1em;
+    width: 24em;
+    top: -1.5em;
+}
+.like-dislike-container
+{
+    position:relative;
+    padding-top: 1em;
+    text-align: center;
+}
+
+.notes-header-explore
+{
+    position:relative;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 2em;
+    width: 40em;
+    top: -2em;
+
+}
+.profile-follower-count p
+{
+    position:relative;
+    display: inline;
+    width: 4em;
+    left: 0.5em;
+    top: -1.5em;
+
+}
+
+.search-input-form
+{
+
+    position:relative;
+    width: 25em;
+    text-align: center;
+
+
+}
+#search-bar-div
+{
+    position: relative;
+     text-align: center;
+
+
+}
+
+#search-input-bar
+{
+    width: 10em;
+}
+.search-container
+{
+    position: relative;
+    max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+    top: 5em;
+}
+.search-results-box
+{
+    position: relative;
+    background-color: #eaebee;
+    padding: 2em;
+    right: 3em;
+    text-align: center;
+}
+.search-result
+{
+    font-weight: bold;
+}
+
+.posts-main-container
+{
+    background-color: #eaebee;
+    position:relative;
+    height: 100%;
+}
+.follower-count
+{
+    font-weight: bold;
+}
+#follow-button
+{
+    position: relative;
+    top: -1.7em;
+    left: 1.5em;
+    width: 7em;
+}
+
+.follow-box
+{
+    position: relative;
+    padding-top: 1em;
+    padding-left: 1em;
+
+}

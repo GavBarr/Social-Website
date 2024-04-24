@@ -1,0 +1,31 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+<h1>Search Results</h1>
+<div class="search-container">
+
+    <form method="GET" class="search-input-form">
+        <div class="input-group input-group-sm mb-3" id="search-bar-div">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Profile Search</span>
+            <input type="text" class="form-control" id="search-input-bar" aria-label="Username" aria-describedby="inputGroup-sizing-sm" name="q" value="{{ query }}">
+            <button type="submit" class="btn btn-secondary" >Search</button>
+        </div>
+
+    </form>
+
+    <ul>
+        <div class="search-results-box">
+        {% for profile in results %}
+        <div>
+            <img  src="{{ profile.image.url }}">
+           <p class="search-result"><a href="{% url 'view_profile' profile.id %}" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">{{ profile.username }}</a></p>
+            <br>
+        </div>
+
+        {% empty %}
+            <p>No results found</p>
+        {% endfor %}
+
+        </div>
+    </ul>
+</div>
+{% endblock %}

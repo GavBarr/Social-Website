@@ -1,0 +1,66 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+<div class="big-container">
+
+
+        <div class="explore-page-container">
+
+            <div class="explore-header">
+                <h1 class="explore-header-test"> Your Feed</h1>
+            </div>
+                <div class="explore-page-inner-container">
+                {% for following in userfollowing %}
+                    {% for post in posts %}
+                    {% if post.user == following.following%}
+                        <div class="profile-post-section">
+
+
+                    <h1 id="notes-display-text"></h1>
+
+                    <div class="profile-notes-display">
+
+                    </div>
+
+                    <div class="profile-notes-content-parent-container">
+                        <div class="profile-post-content-child-container">
+                            <div class="profile-post-content-header">
+                                <div class="post-profile-image">
+                                    <img class="post-profile-image-image" src="{{ profile.image.url }}" >
+                                </div>
+                                <div class="post-header-container">
+                                    <p class="notes-header">
+                                        {{post.user}}
+                                    </p>
+                                    <p class="notes-header-explore">
+                                        {{post.post_header}}
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="profile-post-content-detail">
+                                <p class="notes-detail">
+                                    {{post.post_details}}
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="like-dislike-container">
+
+
+                            <a href="{% url 'like_post' post.id user.profile.id %}" class="btn btn-outline-primary" type="submit">Like {{ post.post_likes }}</a>
+
+
+
+                        <a href="{% url 'dislike_post' post.id user.profile.id %}"  class="btn btn-outline-primary">Dislike {{ post.post_dislikes }}</a>
+
+                    </div>
+
+                    </div>
+                {% endif %}
+                {% endfor %}
+            {% endfor %}
+                </div>
+        </div>
+</div>
+{% endblock %}

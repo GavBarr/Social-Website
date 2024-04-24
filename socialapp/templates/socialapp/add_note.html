@@ -1,0 +1,44 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+
+<div class="big-container">
+
+
+        <div class="explore-page-container">
+            <div class="explore-page-inner-container">
+                <div class="explore-header">
+                    <h1 class="explore-header-test"> Add Note</h1>
+
+                </div>
+                <div class="add-note-container">
+                    <form method="POST" class="add-note-form">
+                            {% csrf_token %}
+
+                                <div class="input-group">
+
+                                    <div class="add-note-field">
+
+                                        {{form.user}}
+                                    </div>
+
+                                    <div class="add-note-field">
+                                        <h1 class="note-text">Note Header</h1>
+                                        {{form.note_header}}
+
+                                    <div>
+                                    <div class="add-note-field">
+                                        <h1 class="note-text">Note Contents</h1>
+                                        {{form.note_details}}
+                                    </div>
+
+                                </div>
+                            <div class="add-note-button">
+                                <button type="submit" class="btn btn-outline-secondary">Save</button>
+                            </div>
+
+                        </form>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

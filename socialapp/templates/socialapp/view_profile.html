@@ -1,0 +1,165 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+
+
+<div class="profile-main-container">
+
+
+
+        {% for p in profile %}
+
+        <div class="profile-header-container">
+            <img src="{{ p.banner_image.url }}" class="banner_image">
+
+
+            <div class="profile-image-container">
+                <div>
+                    <img class="profile-image" src="{{ p.image.url }}" >
+                </div>
+            </div>
+
+            <div class="profile-pic-box">
+                <div class="profle-name-header">
+                    <h1>{{p.username}}</h1>
+                </div>
+                <div class="profle-description">
+                    <div class="profile-description-text">
+                        <p>{{p.header_description}}</p>
+                    </div>
+                    <div class="profile-description-location">
+                        <p>{{p.city}},{{p.state}} {{p.country}}</p>
+                    </div>
+                     <div class="profile-follower-count">
+                       <p class="follower-count">Followers {{user_followers}}</p>
+                       <p class="follower-count">Following  {{user_followings}}</p>
+
+
+
+
+                         <div class="follow-box">
+
+                        {% if user_followings_object %}
+                         {% for user_follow in user_followings_object %}
+                             {% if  p.username != user_follow.user_following %}
+                                 <a href="{% url 'unfollow_profile' p.id p.username%}" class="btn btn-primary" id="follow-button">Unfollow</a>
+                            {% endif %}
+                         {% endfor %}
+                          {% else %}
+                             <a href="{% url 'follow_profile' p.id p.username%}" class="btn btn-primary" id="follow-button">Follow</a>
+                         {% endif %}
+
+
+                         </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    <div>
+
+        <div class="profile-small-container">
+
+
+
+            <div class="profile-column-container">
+
+                <div class="profile-notes-section">
+
+                    <div class="profile-notes-display">
+                        <h1 id="notes-display-text">Notes</h1>
+                    </div>
+                    {% for note in notes %}
+                    <div class="profile-notes-content-parent-container">
+                        <div class="profile-notes-content-child-container">
+                            <div class="profile-notes-content-header">
+                                <div class="post-profile-image">
+                                    <img class="post-profile-image-image" src="{{ p.image.url }}" >
+                                </div>
+                                <div class="post-header-container">
+                                    <p class="notes-header">
+                                    {{note.note_header}}
+                                </p>
+                                </div>
+
+                            </div>
+                            <div class="profile-notes-content-detail">
+                                <p class="notes-detail">
+                                    {{note.note_details}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                      {% endfor %}
+
+
+                </div>
+                <h1 id="notes-display-text">Posts</h1>
+                {% for post in posts %}
+                <div class="profile-post-section">
+                    <h1 id="notes-display-text"></h1>
+
+                    <div class="profile-notes-display">
+
+                    </div>
+
+                    <div class="profile-notes-content-parent-container">
+                        <div class="profile-post-content-child-container">
+                            <div class="profile-post-content-header">
+                                <div class="post-profile-image">
+                                    <img class="post-profile-image-image" src="{{ p.image.url }}" >
+                                </div>
+                                <div class="post-header-container">
+                                    <p class="notes-header">
+                                        {{post.post_header}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="profile-post-content-detail">
+                                <p class="notes-detail">
+                                    {{post.post_details}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="like-dislike-container">
+
+                        <a href="{% url 'like_post_profile' post.id p.id %}"  class="btn btn-outline-primary">Like {{ post.post_likes }}</a>
+                        <a href="{% url 'dislike_post_profile' post.id p.id %}"  class="btn btn-outline-primary">Dislike {{ post.post_dislikes }}</a>
+
+                    </div>
+                    </div>
+                    <div>
+
+                    </div>
+
+
+
+
+
+                    </div>
+                {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}

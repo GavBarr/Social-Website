@@ -1,0 +1,52 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+<div class="container">
+    <div class="profile-settings-container">
+        <div class="profile-settings-main-container">
+            <h1 class="profile-settings-header">{{profile.user}}'s Settings</h1>
+            <div class="profile-settings-child-container">
+                <div class="banner-image-upload">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                            <div class="input-group">
+                                {% for field in form%}
+                                <div>
+                                    {{field.name}}
+                                    {{field}}
+                                <div>
+
+
+
+
+                                    {% endfor %}
+                            </div>
+
+                        <button type="submit" class="btn btn-outline-secondary">Save</button>
+                    </form>
+                   <!--<div class="input-group">
+                      <label class="label-for-profile-images" for="inputGroupFile03">Banner Picture</label><br>
+                      <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon04" aria-label="Upload" >
+                      <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button>
+
+                      <label class="label-for-profile-images" for="inputGroupFile04">Profile Picture</label><br>
+                      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"  >
+                      <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+                    </div>
+                </div>
+                <div class="profile-image-upload">
+                    <p>Profile Image</p>
+                    <div class="input-group">
+                      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                      <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+                    </div>
+                </div>-->
+                <div class="profile-description-upload">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

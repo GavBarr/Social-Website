@@ -1,0 +1,42 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+
+<div class="big-container">
+
+
+        <div class="explore-page-container">
+            <div class="explore-page-inner-container">
+                <div class="explore-header">
+                    <h1 class="explore-header-test"> New Post</h1>
+
+                </div>
+
+
+                <div class="add-note-container">
+
+                <form method="POST" class="add-post-form">
+                    {% csrf_token %}
+
+                            <div class="input-group">
+
+
+                                <div>
+                                    <h1 id="notes-display-text">Header</h1>
+                                    {{postform.post_header}}
+                                    <br>
+                                    <h1 id="notes-display-text">Details</h1>
+                                    {{postform.post_details}}
+                                <div>
+
+
+                            </div>
+                        <div class="add-post-button">
+                        <button type="submit" class="btn btn-outline-secondary">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+</div>
+{% endblock %}

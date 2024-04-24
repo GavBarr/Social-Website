@@ -1,0 +1,186 @@
+{% extends 'socialapp/base.html' %}
+{% block body %}
+
+{% if request.path|slice:"0:10" == "/add_post/" %}
+<div class="profile-main-container-blur">
+{% else %}
+<div class="profile-main-container">
+{% endif %}
+
+
+
+
+        <div class="profile-header-container">
+            <img src="{{ profile.banner_image.url }}" class="banner_image">
+
+
+            <div class="profile-image-container">
+                <div>
+                    <img class="profile-image" src="{{ profile.image.url }}" >
+                </div>
+            </div>
+
+            <div class="profile-pic-box">
+                <div class="profle-name-header">
+                    <h1>{{profile.user}}</h1>
+                </div>
+                <div class="profle-description">
+                    <div class="profile-description-text">
+                        <p>{{profile.header_description}}</p>
+                    </div>
+                    <div class="profile-description-location">
+                        <p>{{profile.city}},{{profile.state}} {{profile.country}}</p>
+                    </div>
+                     <div class="profile-follower-count">
+                       <p class="follower-count">Followers {{user_followers}}</p>
+                       <p class="follower-count">Following  {{user_followings}}</p>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    <div>
+
+        <div class="profile-small-container">
+
+
+
+            <div class="profile-column-container">
+
+                <div class="profile-notes-section">
+
+                    <div class="profile-notes-display">
+                        <h1 id="notes-display-text">Notes</h1>
+                    </div>
+                    {% for note in notes %}
+                    <div class="profile-notes-content-parent-container">
+                        <div class="profile-notes-content-child-container">
+                            <div class="profile-notes-content-header">
+                                <div class="post-profile-image">
+                                    <img class="post-profile-image-image" src="{{ profile.image.url }}" >
+                                </div>
+                                <div class="post-header-container">
+                                    <p class="notes-header">
+                                    {{note.note_header}}
+                                </p>
+                                </div>
+
+                            </div>
+                            <div class="profile-notes-content-detail">
+                                <p class="notes-detail">
+                                    {{note.note_details}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="note-deletion-container">
+
+                            <a href="{% url 'edit_note' note.id profile.id %}" class="btn btn-secondary">Edit Note</a>
+                            <a href="{% url 'delete_note' note.id profile.id %}"  class="btn btn-light">Delete Note</a>
+
+                    </div>
+                      {% endfor %}
+                    <div class="note-deletion-container">
+                    {% if not notes %}
+                        <a href="{% url 'add_note' profile.id%}" class="btn btn-success">Add Note</a>
+                    {% endif %}
+                    </div>
+
+                </div>
+                <div class="posts-main-container">
+
+
+                    <h1 id="notes-display-text">Posts</h1>
+                    {% for post in posts %}
+                    <div class="profile-post-section">
+                        <h1 id="notes-display-text"></h1>
+
+                        <div class="profile-notes-display">
+
+                        </div>
+
+                        <div class="profile-notes-content-parent-container">
+                            <div class="profile-post-content-child-container">
+                                <div class="profile-post-content-header">
+                                    <div class="post-profile-image">
+                                        <img class="post-profile-image-image" src="{{ profile.image.url }}" >
+                                    </div>
+                                    <div class="post-header-container">
+                                        <p class="notes-header">
+                                            {{post.post_header}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="profile-post-content-detail">
+                                    <p class="notes-detail">
+                                        {{post.post_details}}
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                        <div class="like-dislike-container">
+
+                        <a   class="btn btn-outline-primary">Likes {{ post.post_likes }}</a>
+                        <a   class="btn btn-outline-primary">Dislikes {{ post.post_dislikes }}</a>
+
+                        </div>
+                        <div class="note-deletion-container">
+                            <a href="{% url 'delete_post' post.id profile.id %}"  class="btn btn-light">Delete Post</a>
+                        </div>
+
+
+
+
+                        </div>
+                    {% endfor %}
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+ {% if request.path|slice:"0:10" == "/add_post/" %}
+
+          <!--  <div class="add-post-container">
+                {{form.user}}
+                <div class="exit-add-post-button">
+                    <a href="{% url 'profile' profile.id%}" class="btn-close" aria-label="Close"></a>
+                </div>
+                <div class="add-post-small-container">
+                    <h1>Add Post</h1>
+                    <form method="POST">
+                    {% csrf_token %}
+                        {{form.user}}
+                    {% for field in form %}
+                        {{field.name}}
+                        {{field}}
+                        <br>
+                    {% endfor %}
+
+                        <button type="submit" class="btn btn-primary">Post!</button>
+                    </form>
+
+                </div>
+            </div>-->
+            {% endif %}
+
+<div class="create-profile-post-button">
+    <a href="{% url 'add_post' profile.id%}" id="add-post-button" class="btn btn-outline-primary">Post</a>
+</div>
+
+{% endblock %}
